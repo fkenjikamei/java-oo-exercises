@@ -3,13 +3,15 @@ import java.util.Random;
 
 class AdivinhacaoComMetodos {
 	int numero;
-	
+
 	AdivinhacaoComMetodos() {
-		Random aleatorio = new Random();
-		this.numero = aleatorio.nextInt(100)+1;
-		System.out.println(this.numero);
+		
 	}
 
+	AdivinhacaoComMetodos(int limite) {
+		Random aleatorio = new Random();
+		this.numero = aleatorio.nextInt(limite)+1;
+	}
 
 	boolean verificarChute(int chute) {
 		if(chute == this.numero) {
