@@ -6,6 +6,7 @@ class AdivinhacaoComMetodos {
 	void verificarChute(int chute) {
 		if(chute == this.numero) {
 			System.out.println("Parabéns, você acertou!");
+			return true;
 		}
 		else if(chute > numero) {
 			System.out.println("Chute foi maior");
