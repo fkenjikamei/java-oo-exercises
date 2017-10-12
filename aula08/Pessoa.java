@@ -1,9 +1,11 @@
 class Pessoa {
-	String nome;
+	static int cod;
+	protected String nome;
 	int idade;
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		cod +=1;
+		this.nome = cod+"-"+nome;
 	}
 
 	public void setIdade(int idade) {
@@ -16,5 +18,6 @@ class Pessoa {
 
 	public static void main(String[] args) {
 		Pessoa p1 = new Pessoa();
+		p1.setNome("Teste");
 	}
 }
