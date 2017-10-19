@@ -1,7 +1,11 @@
-public class Funcionario {
+public abstract class Funcionario {
 	private String nome;
 	private int cpf;
 	protected double salario;
+
+	Funcionario(String nome) {
+		this.nome = nome;
+	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -15,11 +19,10 @@ public class Funcionario {
 		this.cpf = cpf;
 	}
 
-	public void calcularSalario(int qtdHorasTrabalhadas) {
-		this.salario = qtdHorasTrabalhadas*40;
-	}
+	public abstract void calcularSalario(int qtdHorasTrabalhadas);
 
 	public double getSalario() {
 		return this.salario;
 	}
+
 }

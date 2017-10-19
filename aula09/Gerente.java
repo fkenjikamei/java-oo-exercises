@@ -1,5 +1,11 @@
+import java.util.Scanner;
+
 class Gerente extends Funcionario {
 	private int codDepartamentoGerencia;
+
+	Gerente(String nome) {
+		super(nome);
+	}
 
 	public void setCodDepartamentoGerencia(int cod) {
 		this.codDepartamentoGerencia = cod;
@@ -7,10 +13,5 @@ class Gerente extends Funcionario {
 
 	public int getCodDepartamentoGerencia() {
 		return this.codDepartamentoGerencia;
-	}
-
-	//Sobrescrita
-	public void calcularSalario(int qtdHorasTrabalhadas) {
-		this.salario = qtdHorasTrabalhadas*100;
 	}
 }
