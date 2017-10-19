@@ -14,4 +14,9 @@ class Gerente extends Funcionario {
 	public int getCodDepartamentoGerencia() {
 		return this.codDepartamentoGerencia;
 	}
+
+	@Override
+	public void calcularSalario(int qtdHorasTrabalhadas) {
+		this.salario = qtdHorasTrabalhadas*100;
+	}
 }
