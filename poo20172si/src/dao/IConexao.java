@@ -3,5 +3,5 @@ package dao;
 import java.sql.Connection;
 
 public interface IConexao {
-	Connection getConexao(); 
+	Connection getConexao() throws Exception; 
 }

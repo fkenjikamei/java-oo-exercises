@@ -31,7 +31,7 @@ public class ConexaoMySQL implements IConexao {
 
 
 	@Override
-	public Connection getConexao() {
+	public Connection getConexao() throws Exception {
 		Connection conexao = null;
 		
 		try {
@@ -42,9 +42,8 @@ public class ConexaoMySQL implements IConexao {
 
 		try {
 			conexao = DriverManager.getConnection("jdbc:mysql://"+this.host+"/"+this.banco, this.login, this.password);
-			System.out.println("funcionou!");
 		} catch (SQLException e) {
-			System.out.println("Erro na coneão: " + e.getMessage());
+			System.out.println("Erro na conexão: " + e.getMessage());
 		}
 
 		return conexao;
