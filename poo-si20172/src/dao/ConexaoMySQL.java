@@ -43,7 +43,7 @@ public class ConexaoMySQL implements IConexao {
 		try {
 			conexao = DriverManager.getConnection("jdbc:mysql://"+this.host+"/"+this.banco, this.login, this.password);
 		} catch (SQLException e) {
-			System.out.println("Erro na conexão: " + e.getMessage());
+			System.out.println("Erro na coneão: " + e.getMessage());
 		}
 
 		return conexao;

@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,6 +21,7 @@ public class ClienteDAO implements IClienteDAO {
 		Statement stmt = this.conexao.createStatement();
 		stmt.executeUpdate("INSERT INTO Cliente(nome, cpf, email) VALUES('"+cliente.getNome()+"','"+cliente.getCpf()+"','"+cliente.getEmail()+"')");
 	}
+	
 
 	public void alterarNome(String cpf, String novoEmail) throws SQLException {
 		Statement stmt = this.conexao.createStatement();
@@ -34,5 +36,20 @@ public class ClienteDAO implements IClienteDAO {
 		ResultSet rs = stmt.executeQuery(sql);
 		
 		return rs;
+	}
+
+	public void excluirPorNome(String nome) throws SQLException {
+		Statement stmt = this.conexao.createStatement();
+		String sql = "DELETE FROM Cliente WHERE nome='"+nome+"'";
+		stmt.executeUpdate(sql);
+	}
+
+	public void cadastrarComPreparedStatement(ClienteVO clienteVO) throws SQLException {
+		String sql = "INSERT INTO Cliente(nome, cpf, email) VALUES(?,?,?)";
+		PreparedStatement pstmt = this.conexao.prepareStatement(sql);
+		pstmt.setString(1, clienteVO.getNome());
+		pstmt.setString(2, clienteVO.getCpf());
+		pstmt.setString(3, clienteVO.getEmail());
+		pstmt.executeUpdate();
 	}
 }

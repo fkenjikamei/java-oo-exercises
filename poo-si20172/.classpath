@@ -12,7 +12,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/fernandokamei/Downloads/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar">
+	<classpathentry kind="lib" path="/Users/fernandokamei/projects/eclipse-workspace/utils-development/java/mysql-connector-java-5.1.42-bin.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
